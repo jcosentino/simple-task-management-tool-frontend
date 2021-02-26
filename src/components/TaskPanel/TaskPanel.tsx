@@ -14,6 +14,7 @@ function TaskPanel() {
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [filter, setFilter]: [string, (error: string) => void] = React.useState('All');
   const [action, setAction]: [string, (error: string) => void] = React.useState('');
+  const [idAction, setIdAction]: [number, (error: number) => void] = React.useState(-1);
 
   useEffect(() => {
     axios.get<ITask[]>(TASKS_URL,
@@ -84,7 +85,7 @@ function TaskPanel() {
             <h3><strong>Actions:</strong></h3>
 
             <label className="container">Create
-              <input type="radio" name="radio" />
+              <input type="radio" name="radio" disabled={true} />
               <span className="checkmark"></span>
             </label>
 
