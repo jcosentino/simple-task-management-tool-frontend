@@ -1,0 +1,13 @@
+.Task {
+    opacity: 1.0;
+    background-color: rgb(25, 161, 161);
+    margin: 1em 0.5em;
+}
+
+.Task.Overdue {
+    background-color: red;
+}
+
+.Task.dueTodOrTom {
+    background-color: yellow;
+}

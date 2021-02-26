@@ -1,0 +1,14 @@
+.TaskPanel {
+    width: 90vw;
+    height: 90vh;
+    background-color: rgb(9, 129, 129);
+    opacity: 0.7;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+.TasksInPanel {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

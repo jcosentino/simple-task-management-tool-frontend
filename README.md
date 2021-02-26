@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Simple Task Management Tool (Backend)
+Foobar is a Python library for dealing with word pluralization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+Download and install [NodeJS LTS](https://nodejs.org/en/).
+Confirm that the application installed by issuing the command:
+```bash
+node -v
+```
+You should see a similar printout:
+```bash
+$ node -v
+v14.15.5
+```
 
-## Available Scripts
+Next, globally install the following NPM module:
 
-In the project directory, you can run:
+```bash
+npm install -g npm@latest typescript tslint
+```
 
-### `npm start`
+Download and install [Docker](https://www.docker.com/).
+Confirm that the application installed by issuing the command:
+```bash
+docker -v
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You should see a similar printout:
+```bash
+$ docker -v
+Docker version 20.10.2, build 2291f61
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
+Run this command to download the node modules:
+```bash
+npm install
+```
 
-### `npm test`
+Starting the application is easy! Run the following command:
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you would like to run tests, run this command:
+```bash
+npm test
+```
 
-### `npm run build`
+If you would like to run the linter, run this command:
+```bash
+npm lint
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you would like to build the application, run this command:
+```bash
+npm build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To Dockerize the application, run the following command from the application's root directory:
+```bash
+docker build -t simple-task-management-tool-frontend .
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then, run the Docker application, assuming port 3000:
+```bash
+docker run --rm -p 3000:3000 --name simple-task-management-tool-frontend simple-task-management-tool-frontend:latest
+```
 
-### `npm run eject`
+## Backend Component
+You will need the backend API running in the background in order to make the appropriate API calls. That repo can be found at ```https://github.com/jcosentino/simple-task-management-tool-backend```.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone it in a separate folder:
+```bash
+git clone git@github.com:jcosentino/simple-task-management-tool-backend.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Finally, follow the directions according to the backend appication's README.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Compatibility
+This application has been tested on the following web browsers (desktop and mobile Android):
+```
+Google Chrome
+Mozilla Firefox
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Any other browsers might not work as intended. Use other browsers at your own risk.
