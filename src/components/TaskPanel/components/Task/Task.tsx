@@ -12,18 +12,18 @@ function Task(props: ITask) {
     status
   } = props;
 
-  function specialFlag(status: string): string {
+  function specialFlag(): string {
     const currDate = new Date();
+    const date = new Date();
     if(dueDateMonth && dueDateDay && dueDateYear){
-      const date = new Date();
       date.setMonth(dueDateMonth);
       date.setDate(dueDateDay);
       date.setFullYear(dueDateYear);
-      if(date.getDate() === currDate.getDate() ||
-         (date.getMonth() === currDate.getMonth()+1 &&
-          date.getDay() === currDate.getDay()+1 &&
-          date.getFullYear() === currDate.getFullYear())){
-        return 'dueTodOrTom'
+
+      if(date.getMonth() === currDate.getMonth()+1 &&
+         (date.getDate() === currDate.getDate() || date.getDate() === currDate.getDate()+1) &&
+         date.getFullYear()){
+        return 'DueTodOrTom';
       }
       return date < currDate ? 'Overdue' : '';
     }
@@ -32,7 +32,7 @@ function Task(props: ITask) {
   }
 
   return (
-    <div className={`Task ${specialFlag(status)}`}>
+    <div className={`Task ${specialFlag()}`}>
       <div>
         <div>ID: {id}</div>
         <div>Name: {name}</div>
